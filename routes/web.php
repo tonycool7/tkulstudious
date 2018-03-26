@@ -31,6 +31,8 @@ Route::view('/our_services', 'menu.services');
 
 Route::view('/contact_us', 'menu.services');
 
+Route::view('/approach', 'menu.approach');
+
 Route::view('/about', 'menu.about');
 
 Route::view('/others', 'menu.others');
