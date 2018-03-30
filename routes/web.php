@@ -33,6 +33,8 @@ Route::view('/contact_us', 'menu.services');
 
 Route::view('/approach', 'menu.approach');
 
+Route::resource('/invoice', 'InvoiceController');
+
 Route::view('/about', 'menu.about');
 
 Route::view('/others', 'menu.others');

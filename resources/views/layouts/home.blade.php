@@ -1,4 +1,4 @@
-<!doctype html>
+{{--<!doctype html>--}}
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="desciption" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta name="keywords" content="website, websites, web design, tonykulstudio, web architecture, web development, web studio,"/>
     <meta name="robots" content="index/follow"/>
     <meta name="DC.title" content="tonykulstudio"/>
@@ -21,10 +22,11 @@
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="website">
 
+    <link rel="shortcut icon" type="image/png" href="/images/logo/logo2.png"/>
     <title>tkulstudios</title>
-    <!-- Fonts -->
     <link href="{{mix('/css/app.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{mix('/css/custom.css')}}" rel="stylesheet" type="text/css"/>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,7 +47,7 @@
             <div class="container intro-section__nav-container">
                 <div class="row intro-section__nav-row">
                     <div class="logo-container">
-                        <a href="/" class="logo">tkulstudios</a>
+                        <a href="/" class="logo"><img src="/images/logo/logo2.png"></a>
                     </div>
                     <div class="contact-container">
                         <a href='/start_project' id="contact_us">Contact us </a>
@@ -65,7 +67,7 @@
                 <a href="/our_services">Services</a>
                 <a href="/projects">Projects</a>
                 <a href="/contact_us">Contact</a>
-                <a href="/others">Others</a>
+                <a href="/approach">Approach</a>
             </div>
         </section>
 
