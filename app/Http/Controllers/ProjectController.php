@@ -62,7 +62,7 @@ class ProjectController extends Controller
         $projectData = $request->all();
         unset($projectData['upload']);
 
-        $servicesJson = json_encode(array_intersect($services, array_flip($projectData)));
+        $servicesJson = json_encode(array_intersect(array_flip($projectData), $services));
         $projectData['services'] = $servicesJson;
 
         if($request->hasFile('upload')){

@@ -1,4 +1,4 @@
-<?php
+php<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +32,8 @@ Route::view('/our_services', 'menu.services');
 Route::view('/contact_us', 'menu.services');
 
 Route::view('/approach', 'menu.approach');
+
+Route::resource('/invoice', 'InvoiceController');
 
 Route::view('/about', 'menu.about');
 
