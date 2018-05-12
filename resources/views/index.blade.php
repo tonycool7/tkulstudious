@@ -104,38 +104,35 @@
 
                 <div class="row others-container">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="other-item">
+                        <a href="/careers" class="other-item">
                             <div class="other-item__descr">
                                 <h3>Careers</h3>
-                                <a href="/careers">Our Job Openings</a>
+                                <p>Our Job Openings</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="other-item">
+                        <a href="/start_project" class="other-item">
                             <div class="other-item__descr">
                                 <h3>Collaborate</h3>
-                                <a href="/start_project">Contact Us</a>
+                                <p>Contact Us</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="other-item">
+                        <a href="/approach" class="other-item">
                             <div class="other-item__descr">
                                 <h3>Approach</h3>
-                                <a href="/approach">Our Approach</a>
+                                <p>Our Approach</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 @endsection
-
-
-
 
 {{--<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>--}}
 @section('scripts')
