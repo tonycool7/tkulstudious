@@ -85,10 +85,10 @@ class ServicesController extends Controller
 
         $service->update($request->all());
 
-        return redirect('/services')->with(['success' => 'Service upaated!']);
+        return redirect('/services')->with(['success' => 'Service updated!']);
     }
 
-    /**
+    /*
      * Remove the specified resource from storage.
      *
      * @param  int  $id

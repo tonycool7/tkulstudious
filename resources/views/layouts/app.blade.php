@@ -71,6 +71,14 @@
                                     List
                                 </a>
                                 <a class="dropdown-item" href="/expenses_category/create">
+                                Invoices <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/invoice">
+                                    List
+                                </a>
+                                <a class="dropdown-item" href="/invoice/create">
                                     create
                                 </a>
                             </div>

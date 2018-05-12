@@ -83,6 +83,15 @@
             padding: 10px;
         }
 
+        .invoice-table table tr td{
+            font-size: 20px;
+            padding: 20px 0px 20px 0px;
+        }
+
+        .right{
+            float: right;
+        }
+
         .right h3{
             text-align: center;
             font-size: 20px;
@@ -109,7 +118,10 @@
         .acc-details table tr td, .acc-details table tr th{
             border: 1px solid black;
         }
-
+        .invoice-conclusion{
+            padding: 20px;
+            height: 160px;
+        }
         .thanks-msg{
             padding: 20px;
         }
@@ -129,6 +141,7 @@
     <div class="col-4 company-details">
         <h3>+2349096111758</h3>
         <h3>tkulstudios@gmail.com</h3>
+        <h3>tkulstudio@gmail.com</h3>
         <h3>tonykul.com</h3>
     </div>
     <div class="col-4 company-details">
@@ -137,6 +150,7 @@
 </header>
 @php
     $subtotal = \App\Services::findMany(array_keys((array)json_decode($services)))->sum('cost_usd');
+    $subtotal = \App\Services::findMany(array_keys((array)json_decode($services)))->sum('cost');
     $tax = $subtotal * .18;
     $total = $subtotal + $tax;
 @endphp
@@ -150,6 +164,8 @@
     </div>
     <div class="col-4 user-details__descr">
         <h2>Invoice Number {{$id}}</h2>
+        <h2>Invoice Number</h2>
+        <h3>{{$id}}</h3>
         <h2>Date Of Issue</h2>
         <h3>{{$created_at}}</h3>
     </div>
@@ -215,6 +231,15 @@
             <td>${{$subtotal}}.00</td>
         </tr>
     </table>
+</section>
+
+<section class="invoice-conclusion">
+    <div class="col-4 right">
+        <h3>Subtotal: $<span>{!! $subtotal !!}.00</span></h3>
+        <h3>Tax: $<span>{{$tax}}</span></h3>
+        <h3>Total: $<span>{{$total}}.00</span></h3>
+        <h3>Amount Due: $<span>{{$total}}.00</span></h3>
+    </div>
 </section>
 
 <section class="thanks-msg">
