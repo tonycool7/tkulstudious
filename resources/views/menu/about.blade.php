@@ -1,5 +1,7 @@
 @extends('layouts.start_project')
 
+@section('title') About Tkulstudios @endsection
+
 @section('menu-content')
     <div>
         <h2 class="about-title">About Us</h2>

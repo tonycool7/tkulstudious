@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, nofollow"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -11,7 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -44,6 +45,39 @@
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Expenses <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/expenses">
+                                    List
+                                </a>
+                                <a class="dropdown-item" href="/expenses/create">
+                                    create
+                                </a>
+                                <a class="dropdown-item" href="/expenses/report">
+                                    report
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Expenses Categories <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/expenses_category">
+                                    List
+                                </a>
+                                <a class="dropdown-item" href="/expenses_category/create">
+                                    create
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Services <span class="caret"></span>
                             </a>
 
@@ -52,6 +86,21 @@
                                     List
                                 </a>
                                 <a class="dropdown-item" href="/services/create">
+                                    create
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Invoices <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/invoice">
+                                    List
+                                </a>
+                                <a class="dropdown-item" href="/invoice/create">
                                     create
                                 </a>
                             </div>

@@ -508,7 +508,7 @@
 }
 #services .services-text {
   position: absolute;
-  top: 105pt;
+  top: 90pt;
   margin: auto;
   left: 0;
   right: 0;
@@ -724,9 +724,6 @@
   margin: auto;
   margin-top: 25pt;
 }
-.start-project-form__content {
-  margin-top: 70pt;
-}
 .start-project-textarea {
   padding: 20pt;
   height: 120pt;
@@ -747,15 +744,16 @@ input[type='file'] {
 .checkbox-div {
   width: 100%;
   border: 1px solid white;
-  height: 39pt;
   margin-top: 10pt;
   position: relative;
   cursor: pointer;
+  line-height: 1;
 }
 .checkbox-div p {
   color: #beaa8c;
   font-size: 14pt;
-  padding: 7pt;
+  padding: 10pt 0px 0px 7px;
+  margin: 0px;
 }
 .checkbox-div p i {
   position: absolute;

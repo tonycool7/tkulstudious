@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services;
 use Illuminate\Http\Request;
+use App\ExpensesCategory;
 
-class ServicesController extends Controller
+class ExpensesCategoryController extends Controller
 {
-
     public function __construct()
     {
-        $this->middleware(['auth', 'can:access-admin']);
+        $this->middleware('auth');
     }
 
     /**
@@ -20,9 +19,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services = Services::all();
-
-        return view('services.index', compact('services'));
+        $expensesCategories = ExpensesCategory::all();
+        return view('expensesCategory.index', compact('expensesCategories'));
     }
 
     /**
@@ -32,7 +30,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        return view('services.create');
+        return view('expensesCategory.create');
     }
 
     /**
@@ -43,9 +41,9 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        Services::create($request->all());
+        ExpensesCategory::create($request->all());
 
-        return redirect('/services')->with(['success' => 'Service added!']);
+        return redirect('/expenses_category')->with(['success' => 'Expense category added!']);
     }
 
     /**
@@ -56,7 +54,7 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -67,9 +65,9 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        $service = Services::findOrFail($id);
+        $expensesCategory = ExpensesCategory::findOrFail($id);
 
-        return view('services.edit', compact('service'));
+        return view('expensesCategory.edit', compact('expensesCategory'));
     }
 
     /**
@@ -81,11 +79,11 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $service = Services::findorFail($id);
+        $expenses_category = ExpensesCategory::findorFail($id);
 
-        $service->update($request->all());
+        $expenses_category->update($request->all());
 
-        return redirect('/services')->with(['success' => 'Service upaated!']);
+        return redirect('/expenses_category')->with(['success' => 'expenses category updated!']);
     }
 
     /**
@@ -96,10 +94,11 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        $service = Services::findorFail($id);
+        $expenses_category = ExpensesCategory::findorFail($id);
 
-        $service->destroy($id);
+        $expenses_category->expenses()->delete();
+        $expenses_category->destroy($id);
 
-        return redirect()->back()->with(['success' => 'Service deleted!']);
+        return redirect()->back()->with(['success' => 'expenses category deleted!']);
     }
 }

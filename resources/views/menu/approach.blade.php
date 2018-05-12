@@ -1,5 +1,7 @@
 @extends('layouts.start_project')
 
+@section('title') Our Approach @endsection
+
 @section('menu-content')
     <div>
         <h2 class="about-title">Our approach</h2>

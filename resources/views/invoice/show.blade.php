@@ -41,11 +41,6 @@
             color: white;
         }
 
-        .project-title{
-            font-size: 24px;
-            padding: 10px;
-        }
-
         .user-details__descr h2{
             color: #6c757d;
             font-size: 20px;
@@ -53,7 +48,7 @@
         }
 
         .total{
-            font-size: 30px;
+            font-size: 50px;
             color: #5a6268;
         }
 
@@ -68,39 +63,24 @@
             padding: 20px;
         }
 
-        .project-descr{
-            padding: 20px;
-        }
-
-        .project-descr p{
-            font-size: 20px;
-        }
-
         .invoice-table table{
             width: 100%;
+            border: 1px solid black;
             border-collapse: collapse;
-            border: 1px solid black;
-        }
-
-        .invoice-table table td{
-            border: 1px solid black;
         }
 
         .invoice-table table th{
-            border: 1px solid black;
             text-align: left;
             color: #6c757d;
             font-size: 24px;
-            padding: 20px 5px;
+            border: 1px solid black;
+            padding: 5px;
         }
 
         .invoice-table table tr td{
+            border: 1px solid black;
             font-size: 20px;
-            padding: 20px 5px;
-        }
-
-        .right{
-            float: right;
+            padding: 10px;
         }
 
         .right h3{
@@ -113,10 +93,23 @@
             margin-right: 20px;
         }
 
-        .invoice-conclusion{
+        .acc-details{
             padding: 20px;
-            height: 160px;
         }
+
+        .acc-details h2{
+            margin: 0px;
+        }
+
+        .acc-details table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .acc-details table tr td, .acc-details table tr th{
+            border: 1px solid black;
+        }
+
         .thanks-msg{
             padding: 20px;
         }
@@ -131,7 +124,7 @@
 <header class="invoice-header">
     <div class="col-4">
         <h2 class="company-name">Tkulstudios</h2>
-        <p class="invoice-name">Project</p>
+        <p class="invoice-name">Invoice</p>
     </div>
     <div class="col-4 company-details">
         <h3>+2349096111758</h3>
@@ -143,69 +136,89 @@
     </div>
 </header>
 @php
-    $workmanship = 30000;
-    $subtotal = \App\Services::findMany(array_keys((array)json_decode($services)))->sum('cost_ng') + $workmanship;
+    $subtotal = \App\Services::findMany(array_keys((array)json_decode($services)))->sum('cost_usd');
     $tax = $subtotal * .18;
     $total = $subtotal + $tax;
 @endphp
 <section class="user-details">
     <div class="col-4 user-details__descr">
-        <h2>Client</h2>
-        <h3>{{$name}}</h3>
-        <h3>{{$email}}</h3>
-        <h3>{{$telephone}}</h3>
+        <h2>Billed To</h2>
+        <h3>{{$client_name}}</h3>
+        <h3>{{$address}}</h3>
+        <h3>{{$city}}, {{$country}}</h3>
+        <h3>{{$zip}}</h3>
     </div>
     <div class="col-4 user-details__descr">
-        <h2>Company</h2>
-        <h3>{{$company}}</h3>
-        <h2>Start Date</h2>
+        <h2>Invoice Number {{$id}}</h2>
+        <h2>Date Of Issue</h2>
         <h3>{{$created_at}}</h3>
     </div>
     <div class="col-4 user-details__descr">
-        <h2>Project Estimate</h2>
-        <h4 class="total"> {{$subtotal}} Naira</h4>
+        <h2>Invoice Total</h2>
+        <h4 class="total">${{$subtotal}}</h4>
     </div>
 </section>
 
 <hr class="line">
-<section class="project-descr">
-    <h3>Project Description</h3>
-    <p>{{$description}}</p>
+<section class="acc-details">
+    {{--<h2>Account Details</h2>--}}
+    {{--<table>--}}
+        {{--<thead>--}}
+            {{--<tr>--}}
+                {{--<th>Name</th>--}}
+                {{--<th>Institution</th>--}}
+                {{--<th>Account no</th>--}}
+                {{--<th>Branch name</th>--}}
+                {{--<th>Branch code</th>--}}
+                {{--<th>Swift code</th>--}}
+                {{--<th>Bank address</th>--}}
+            {{--</tr>--}}
+        {{--</thead>--}}
+        {{--<tbody>--}}
+        {{--<tr>--}}
+            {{--<td>FEMI - OKE GBOLAHAN</td>--}}
+            {{--<td>UNITED BANK FOR AFRICA PLC</td>--}}
+            {{--<td>3002420441</td>--}}
+            {{--<td>ABUJA BRANCH</td>--}}
+            {{--<td>114</td>--}}
+            {{--<td>UNAFNGLA114</td>--}}
+            {{--<td>AREA 3, GARKI, ABUJA</td>--}}
+        {{--</tr>--}}
+        {{--</tbody>--}}
+    {{--</table>--}}
 </section>
-
 <hr class="line">
+
 <section class="invoice-table">
-    <h3 class="project-title">Estimate of project services and functions</h3>
     <table>
         <tr>
-            <th>Service</th>
             <th>Description</th>
-            <th>Cost (Naira)</th>
+            <th>Unit cost</th>
+            <th>Qty</th>
+            <th>Amount</th>
         </tr>
 
         @foreach(\App\Services::findMany(array_keys((array)json_decode($services))) as $item)
             <tr>
-                <td>{{$item->question}}</td>
                 <td>{{$item->description}}</td>
-                <td>{{$item->cost_ng}}</td>
+                <td>{{$item->cost_usd}}</td>
+                <td>1</td>
+                <td>{{$item->cost_usd}}</td>
             </tr>
         @endforeach
         <tr>
-            <td>Workmanship</td>
-            <td>Cost of implementing the design, realizing login and registration, security etc</td>
-            <td>{{$workmanship}}</td>
+            <td colspan="3">Subtotal: </td>
+            <td>${!! $subtotal !!}.00</td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align: right;">
-                Estimated cost:
-            </td>
-            <td>{{$subtotal}}.00 Naira</td>
+            <td colspan="3">Amount Due:</td>
+            <td>${{$subtotal}}.00</td>
         </tr>
     </table>
 </section>
 
 <section class="thanks-msg">
-    <p>Looking forward to working with you. Let's make this idea a reality.</p>
+    <p>It was a pleasure working with you.</p>
 </section>
 </body>
 </html>

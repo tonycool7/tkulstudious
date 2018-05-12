@@ -14,7 +14,9 @@ class Services extends Model
         'name',
         'question',
         'description',
-        'cost',
+        'cost_ng',
+        'cost_usd',
+        'cost_rub',
         'duration'
     ];
 }

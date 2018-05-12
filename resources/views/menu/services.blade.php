@@ -1,5 +1,7 @@
 @extends('layouts.start_project')
 
+@section('title') Our Services @endsection
+
 @section('menu-content')
     <div>
         <h2 class="about-title">Our services</h2>
@@ -39,6 +41,21 @@
             <h4 class="service-title">Web + Mobile Apps</h4>
             <p class="service-text">
                 In this area, we only develop IOS apps. We have very good, well trained and experienced IOS developers who work along side our web developers, who are in charge of the backend.
+            </p>
+        </div>
+        <div class="col-md-4 col-lg-4 col-xl-4 col-sm-4 col-xs-4">
+            <div class="services-number">05</div>
+            <h4 class="service-title">SEO</h4>
+            <p class="service-text">
+                Search engine optimization (SEO) is the process of increasing the visibility of your website on search results.
+            </p>
+        </div>
+
+        <div class="col-md-4 col-lg-4 col-xl-4 col-sm-4 col-xs-4">
+            <div class="services-number">06</div>
+            <h4 class="service-title">Search Speed Optimization</h4>
+            <p class="service-text">
+                We use Elasticsearch to speed up full text search on websites / web services.
             </p>
         </div>
     </div>

@@ -16,9 +16,20 @@
 </div>
 
 <div class="form-group">
-    <label class="control-label">Cost</label>
-    <input type="text" name="cost" class="form-control" value="{{(isset($service)) ? $service->cost : ""}}" placeholder="service duration">
+    <label class="control-label">Cost in Naira</label>
+    <input type="text" name="cost_ng" class="form-control" value="{{(isset($service)) ? $service->cost_ng : ""}}" placeholder="service cost">
 </div>
+
+<div class="form-group">
+    <label class="control-label">Cost in Dollars</label>
+    <input type="text" name="cost_usd" class="form-control" value="{{(isset($service)) ? $service->cost_usd : ""}}" placeholder="service cost">
+</div>
+
+<div class="form-group">
+    <label class="control-label">Cost in Rubles</label>
+    <input type="text" name="cost_rub" class="form-control" value="{{(isset($service)) ? $service->cost_rub : ""}}" placeholder="service cost">
+</div>
+
 <div class="form-group">
     <label class="control-label">Duration</label>
     <input type="text" name="duration" class="form-control" value="{{(isset($service)) ? $service->duration : ""}}" placeholder="service duration">

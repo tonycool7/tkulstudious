@@ -8,13 +8,14 @@ use App\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ProjectController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['startProject', 'store', 'projectCreated']]);
+        $this->middleware(['auth', 'can:access-admin'], ['except' => ['startProject', 'store', 'projectCreated']]);
     }
 
     public function startProject(Request $request){
@@ -62,7 +63,7 @@ class ProjectController extends Controller
         $projectData = $request->all();
         unset($projectData['upload']);
 
-        $servicesJson = json_encode(array_intersect($services, array_flip($projectData)));
+        $servicesJson = json_encode(array_intersect(array_flip($projectData), $services));
         $projectData['services'] = $servicesJson;
 
         if($request->hasFile('upload')){
@@ -86,7 +87,10 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Projects::findOrFail($id);
+        $pdf = PDF::loadView('projects.show', $project);
+
+        return $pdf->stream($project->name.'.pdf');
     }
 
     /**
@@ -121,7 +125,7 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         $project = Projects::findOrFail($id);
-        if(Storage::disk('public')->exists('projects/'.$project->file)){
+        if(isset($project->file)){
             Storage::disk('public')->delete('projects/'.$project->file);
         }
 

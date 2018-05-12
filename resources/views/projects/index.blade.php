@@ -14,7 +14,7 @@
                     <div class="card-header">Projects</div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-hover table-responsive">
+                        <table class="table table-bordered table-hover">
                             <thead>
                             <th>id</th>
                             <th>name</th>

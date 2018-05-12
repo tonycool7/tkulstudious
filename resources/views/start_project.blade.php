@@ -1,5 +1,7 @@
 @extends('layouts.start_project')
 
+@section('title') Start A Project With Tkulstudios @endsection
+
 @section('content')
     <h2 class="start-project__title">Start A Project</h2>
     <form action="/project" method="post" enctype="multipart/form-data">
@@ -22,7 +24,7 @@
         <p class="project-questions">Got anything to share?</p>
         <input type="file" name="upload">
         <div class="checkbox-div upload_file">
-            <p>Upload file <i class="fa fa-plus"></i></p>
+            <p style="padding: 10pt 0px 14px 7px;">Upload file <i class="fa fa-plus"></i></p>
         </div>
         <br/>
         <div class="project-vertical-line"></div>
@@ -39,10 +41,10 @@
         <div style="width: 100%">
             <div class="row">
                 <div class="col-md-6 col-xs-6 col-lg-6 colxl-6 col-sm-6">
-                    <input type="text" name="bugdet_from" class="start-project-input" value="0.00" placeholder="From">
+                    <input type="text" name="budget_from" class="start-project-input" value="0.00" placeholder="From">
                 </div>
                 <div class="col-md-6 col-xs-6 col-lg-6 colxl-6 col-sm-6">
-                    <input type="text" name="bugdet_to" class="start-project-input" value="0.00" placeholder="To">
+                    <input type="text" name="budget_to" class="start-project-input" value="0.00" placeholder="To">
                 </div>
             </div>
         </div>

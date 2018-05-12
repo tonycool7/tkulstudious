@@ -1,31 +1,39 @@
 {{--<!doctype html>--}}
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="desciption" content="">
+    <meta name="desciption" content="Welcome to tkulstudios, We build visually compelling websites that instantly reinforce credibility and that drive conversions.
+                Our team design and develop websites that are Responsive – that provide an optimal viewing experience across a wide range of devices.
+                We deliver a complete solutions from concept to implementation and every website we produce is made to your exact specifications.">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="keywords" content="website, websites, web design, tonykulstudio, web architecture, web development, web studio,"/>
+    <meta name="keywords" content="website, Anthony Femi - Oke, Femi - Oke Anthony,web development, web design, tonykulstudio, web architecture, web development, web studio,"/>
     <meta name="robots" content="index/follow"/>
     <meta name="DC.title" content="tonykulstudio"/>
 
     <meta name="description" content="Welcome to tkulstudios, we design and develop websites and web apps.">
-    <meta itemprop="name" content="Afrikaplustheworld entertainment">
-    <meta itemprop="description" content="Abundance of african music and sounds - african events and parties">
+    <meta itemprop="name" content="tkulstudios">
+    <meta itemprop="description" content="Welcome to tkulstudios, We build visually compelling websites that instantly reinforce credibility and that drive conversions.
+                Our team design and develop websites that are Responsive – that provide an optimal viewing experience across a wide range of devices.
+                We deliver a complete solutions from concept to implementation and every website we produce is made to your exact specifications.">
 
+    <meta property="og:image" content="http://tonykul.com/images/logo/logo2.png"/>
     <meta name="og:title" content="tkulstudios">
-    <meta name="og:description" content="Welcome to tkulstudios, we design and develop websites and web apps.">
+    <meta name="og:description" content="Welcome to tkulstudios, We build visually compelling websites that instantly reinforce credibility and that drive conversions.
+                Our team design and develop websites that are Responsive – that provide an optimal viewing experience across a wide range of devices.
+                We deliver a complete solutions from concept to implementation and every website we produce is made to your exact specifications.">
     <meta name="og:url" content="http://tonykul.com/">
     <meta name="og:site_name" content="tkulstudios">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="website">
 
-    <link rel="shortcut icon" type="image/png" href="/images/logo/logo2.png"/>
-    <title>tkulstudios</title>
-    <link href="{{mix('/css/app.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{mix('/css/custom.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="img_src" href="/images/logo/logo2.png" />
+    <link rel="icon" type="image/png" href="/images/logo/logo2.png"/>
+    <title>tkulstudios | @yield('title') | Anthony Femi - Oke</title>
+    <link href="{{mix('/css/all.css')}}" rel="stylesheet" type="text/css"/>
+    {{--<link href="{{mix('/css/custom.css')}}" rel="stylesheet" type="text/css"/>--}}
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
@@ -71,7 +79,7 @@
             </div>
         </section>
 
-        <div class="intro-section__text">
+        <div class="intro-section__text animated fadeInDown">
             <p>
                 We design & develop <br/> websites and web apps
             </p>

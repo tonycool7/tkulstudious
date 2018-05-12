@@ -13,7 +13,12 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
-    .less('resources/assets/less/custom.less', 'public/css');
+    .less('resources/assets/less/custom.less', 'public/css')
+    .styles([
+        'public/css/app.css',
+        'public/css/custom.css',
+        'public/css/animate.css'
+    ], 'public/css/all.css');
 
 
 mix.version();

@@ -5,39 +5,31 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div class="col-md-10">
+            <div class="col-md-8">
                 <div class="card">
                     @if(session('success'))
                         <div class="alert alert-success">
                             {{session('success')}}
                         </div>
                     @endif
-                    <div class="card-header">Services</div>
+                    <div class="card-header">Expenses Categories</div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-hover table-responsive">
+                        <table class="table table-bordered table-hover">
                             <thead>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>description</th>
-                            <th>cost_ng</th>
-                            <th>cost_usd</th>
-                            <th>cost_rub</th>
-                            <th>duration</th>
-                            <th>action</th>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>description</th>
+                                <th>action</th>
                             </thead>
                             <tbody>
-                            @forelse($services as $item)
+                            @forelse($expensesCategories as $item)
                                 <tr>
-                                    <td><a href="/services/{{$item->id}}/edit">{{$item->id}}</a></td>
-                                    <td>{{$item->name}}</td>
+                                    <td><a href="/expenses_category/{{$item->id}}/edit" title="Edit Expense category">{{$item->id}}</a></td>
+                                    <td><a href="/expenses_category/{{$item->id}}/edit" title="Edit Expense category">{{$item->name}}</a></td>
                                     <td>{{$item->description}}</td>
-                                    <td>{{$item->cost_ng}}</td>
-                                    <td>{{$item->cost_usd}}</td>
-                                    <td>{{$item->cost_rub}}</td>
-                                    <td>{{$item->duration}}</td>
                                     <td>
-                                        <form action="/services/{{$item->id}}" method="POST">
+                                        <form action="/expenses_category/{{$item->id}}" method="POST">
                                             {{method_field('DELETE')}}
                                             {!! csrf_field() !!}
                                             <button><i class="fa fa-trash text-danger"></i></button>
@@ -46,7 +38,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9">No services.. sorry bruh</td>
+                                    <td colspan="4">No categories available.. sorry bruh</td>
                                 </tr>
                             @endforelse
                             <tr></tr>

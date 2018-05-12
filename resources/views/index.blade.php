@@ -1,11 +1,12 @@
 @extends('layouts.home')
 
+@section('title') Web development company @endsection
 @section('content')
         <section id="projects">
             <div class="container" style="height: 100%;">
                 <div class="project-wrapper">
                     <div class="row project-row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 animated afrikaplus-animate">
                             <div class="project-item afrikaplus top-bg">
 
                                 <div class="project-descr">
@@ -14,7 +15,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 animated daweng-animate">
                             <div class="project-item daweng top-bg">
 
                                 <div class="project-descr">
@@ -23,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 animated wrapped-animate">
                             <div class="project-item wrapped top-bg">
 
                                 <div class="project-descr">
@@ -151,6 +152,23 @@
                         items: 3,
                         nav: true
                     }
+                }
+            });
+
+            function isScrolledIntoView(elem) {
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+                var elemTop = elem.offset().top;
+                var elemBottom = elemTop + elem.height();
+
+                return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop+200));
+            }
+
+            $(window).scroll(function() {
+                if (isScrolledIntoView($('#projects')) === true) {
+                    $('.afrikaplus-animate').addClass('fadeInLeft');
+                    $('.daweng-animate').addClass('fadeInDown');
+                    $('.wrapped-animate').addClass('fadeInRight');
                 }
             });
         });

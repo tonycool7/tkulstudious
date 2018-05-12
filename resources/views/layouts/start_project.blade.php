@@ -1,32 +1,39 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="desciption" content="">
-    <meta name="keywords" content="website, websites, web design, tonykulstudio, web architecture, web development, web studio,"/>
+    <meta name="desciption" content="Welcome to tkulstudios, share your idea with us and we will make it a reality. Start a project with us today and be rest assured to get the best web servicesWe focus on maximizing usability and the user experience. Our goal is to make the user's interaction as simple and efficient as possible, in terms of accomplishing user goals.
+                We use graphic design and typography to support usability, influencing how the user performs certain interactions and improving the aesthetic appeal of the design.
+                Our design process balances technical functionality and visual elements. Every detail matters to us.">
+    <meta name="keywords" content="Anthony Femi - Oke, Femi - Oke Anthony, web design, tonykulstudio, web architecture, web development, web studio,"/>
     <meta name="robots" content="index/follow"/>
     <meta name="DC.title" content="tkulstudio"/>
 
     <meta name="description" content="Welcome to tkulstudios, share your idea with us and we will make it a reality. Start a project with us today and be rest assured to get the best web services.">
     <meta itemprop="name" content="tkulstudio">
-    <meta itemprop="description" content="Welcome to tkulstudios, share your idea with us and we will make it a reality. Start a project with us today and be rest assured to get the best web services">
+    <meta itemprop="description" content="Welcome to tkulstudios, share your idea with us and we will make it a reality. Start a project with us today and be rest assured to get the best web servicesWe focus on maximizing usability and the user experience. Our goal is to make the user's interaction as simple and efficient as possible, in terms of accomplishing user goals.
+                We use graphic design and typography to support usability, influencing how the user performs certain interactions and improving the aesthetic appeal of the design.
+                Our design process balances technical functionality and visual elements. Every detail matters to us.">
 
+    <meta property="og:image" content="http://tonykul.com/images/logo/logo2.png"/>
     <meta name="og:title" content="tkulstudios">
-    <meta name="og:description" content="Welcome to tkulstudios, share your idea with us and we will make it a reality. Start a project with us today and be rest assured to get the best web services">
+    <meta name="og:description" content="Welcome to tkulstudios, share your idea with us and we will make it a reality. Start a project with us today and be rest assured to get the best web servicesWe focus on maximizing usability and the user experience. Our goal is to make the user's interaction as simple and efficient as possible, in terms of accomplishing user goals.
+                We use graphic design and typography to support usability, influencing how the user performs certain interactions and improving the aesthetic appeal of the design.
+                Our design process balances technical functionality and visual elements. Every detail matters to us.">
     <meta name="og:url" content="http://tonykul.com/">
     <meta name="og:site_name" content="tkulstudios">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="website">
 
-    <title>tkulstudios</title>
-    <link rel="shortcut icon" type="image/png" href="/images/logo/logo2.png"/>
-    <link href="{{mix('/css/app.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{mix('/css/custom.css')}}" rel="stylesheet" type="text/css"/>
-    <!-- Fonts -->
+    <title>tkulstudios | @yield('title') | Anthony Femi - Oke</title>
+
+    <link rel="img_src" href="/images/logo/logo2.png" />
+    <link rel="icon" type="image/png" href="/images/logo/logo2.png"/>
+    <link href="{{mix('/css/all.css')}}" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,700i,900&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
